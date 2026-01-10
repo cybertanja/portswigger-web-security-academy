@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Burp Suite
+*.burp
+*.log
+*.tmp
+
+# Editor settings
+.vscode/
+.idea/
+
+# Archives
+*.zip
+*.tar
