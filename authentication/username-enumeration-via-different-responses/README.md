@@ -26,12 +26,14 @@ The goal of this lab is to demonstrate how subtle differences in HTTP responses 
 - **Payloads:** Loaded the provided list of candidate usernames.
 - **Analysis:** After running the attack, I inspected the results. 
 - **Finding:** One specific username resulted in a response that differed from the others (e.g., a different response length or a slightly different error message like `"Invalid password"`). This confirmed the existence of a valid user.
+-  ![Username Enumeration Success](./screenshots/username_attack.png)
 
 ### 3. Password Brute-force Attack
 - Returned to **Intruder** and updated the `username` parameter with the valid name found in Step 2.
 - **Positions:** Set the payload position on the `password` parameter.
 - **Payloads:** Loaded the provided list of candidate passwords.
 - **Result:** One request yielded an HTTP **302 Found** status code. This indicates a successful authentication and a redirect to the user's account page.
+-  ![Username Enumeration Success](./screenshots/password_attack.png)
 
 ##  Remediation
 To prevent username enumeration and brute-force attacks, the following measures should be implemented:
