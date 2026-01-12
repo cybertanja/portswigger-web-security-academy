@@ -13,7 +13,7 @@ enumerate valid usernames and subsequently brute-force passwords.
 
 ---
 
-## 🎯 Objective
+##  Objective
 - Identify a valid username using response timing analysis
 - Bypass IP-based brute-force protection
 - Brute-force the password for the identified user
