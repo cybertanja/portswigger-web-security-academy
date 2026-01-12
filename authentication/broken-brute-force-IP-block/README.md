@@ -15,3 +15,26 @@ Attempting to log in as `carlos` with an incorrect password more than three time
 
 
 ![Too many incorrect login attempts](screenshots/01_ip_block_message.png)
+
+### 2. Capturing the Request
+Using **Burp Suite Proxy**, I intercepted a `POST /login` request and sent it to the **Intruder**. To bypass the block, I selected the **Pitchfork** attack type.
+
+* **Positions:** Set markers on the `username` and `password` parameters.
+![Set markers](screenshots/02_intruder_pitchfork_setup.png)
+
+### 3. Configuring Alternating Payloads
+According to the lab requirements, a successful login as `wiener` must precede each attempt to guess `carlos`'s password to reset the IP block.
+
+* **Payload Set 1 (Usernames):** Alternating between `wiener` and `carlos` (200+ rows).<br>
+![Payload 1](screenshots/03_payloads_alternating_setup1.png)
+* **Payload Set 2 (Passwords):** Alternating between `peter` and the provided candidate passwords (200+ rows).
+![Payload 2](screenshots/03_payloads_alternating_setup2.png)
+
+### 4. Resource Pool Configuration
+To ensure requests are sent in the strict alternating order (`wiener` then `carlos`), I created a new **Resource Pool** with `Maximum concurrent requests` set to **1**.
+### 5. Obtaining the Result
+After running the attack, I filtered the results by the `302 Found` status code. Among the successful logins for `wiener`, I found exactly one `302` redirect for user `carlos`.
+
+![Attack results](screenshots/04_bruteforce_success_carlos.png)
+
+
