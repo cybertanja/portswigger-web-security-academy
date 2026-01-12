@@ -5,7 +5,11 @@ of the PortSwigger Web Security Academy.
 
 ## Structure
 - authentication/
-  - Username enumeration via different responses
+ 
+  - broken-brute-force-IP-block
+  - username-enumeration-via-different-responses
+  - username-enumeration-via-response-timing
+  - user-enumeration-via-subtly-different-responses
 
 ## Skills practiced
 - Authentication vulnerabilities
